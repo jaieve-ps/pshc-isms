@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  thymeleaf:
+    view-names: thymeleaf/*
+    prefix: classpath:/templates/
+
+
+storage:
+  ismsBucketName: isms
