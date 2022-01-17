@@ -19,10 +19,10 @@ public class MainController {
 
     @GetMapping("/")
     public String index(Authentication authentication, HttpServletRequest request, HttpServletResponse response) {
-        if (authentication != null) {
-            User user = (User) authentication.getPrincipal();
-            logger.info("user: " + user);
-        }
+//        if (authentication != null) {
+//            User user = (User) authentication.getPrincipal();
+//            logger.info("user: " + user);
+//        }
 
         request.getSession().setMaxInactiveInterval(60 * 60 * 24);
         return "/index";
@@ -30,15 +30,19 @@ public class MainController {
 
     @GetMapping("/login")
     public String mainPage(Authentication authentication) {
-        User user = (User)authentication.getPrincipal();
-        for(GrantedAuthority auth : user.getAuthorities()) {
-            logger.info("user: " + user);
-            if (auth.getAuthority().equals("ROLE_MANAGER")) {
-                return  "/auth/login";
-            } else if (auth.getAuthority().equals("ROLE_USERS")) {
-                return "/auth/login";
-            }
-        }
-        return "redirect:/";
+//        User user = new User();
+//        if (authentication != null) {
+//            user = (User) authentication.getPrincipal();
+//            logger.info("user: " + user);
+//            for(GrantedAuthority auth : user.getAuthorities()) {
+//                logger.info("user: " + user);
+//                if (auth.getAuthority().equals("ROLE_MANAGER")) {
+//                    return  "/auth/login";
+//                } else if (auth.getAuthority().equals("ROLE_USERS")) {
+//                    return "/auth/login";
+//                }
+//            }
+//        }
+        return "/auth/login";
     }
 }
