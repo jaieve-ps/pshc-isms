@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pshc.cloud.contract.mapper.EmployeeMapper">
+
+	<select id="getLoginInfo" resultType="User" statementType="CALLABLE">
+-- 		{ CALL CDM.COM.COM_sr_Login(
+-- 				#{username}
+-- 			)}
+	</select>
+	<select id="getUser" resultType="Employee">
+--		개발 예정
+
+	</select>
+	<update id="updateUser" parameterType="User" statementType="CALLABLE">
+		--		개발 예정
+-- 		{ CALL HE_CDM..COM_un_Employee(
+-- 			#{employeeCode},
+-- 			#{employeeName},
+-- 			#{phoneNo},
+-- 			#{emailAddress},
+-- 			#{homeAddress},
+-- 			#{useYN},
+-- 			#{userId},
+-- 			#{successYN, mode=OUT, jdbcType=CHAR, javaType=String},
+-- 			#{errorMessage, mode=OUT, jdbcType=NVARCHAR, javaType=String}
+-- 		) }
+  	</update>
+
+	<update id="saveUser" parameterType="User" statementType="CALLABLE">
+		--		개발 예정
+-- 		{ CALL HE_CDM..COM_in_Employee(
+-- 			#{employeeCode},
+-- 			#{employeeName},
+-- 			#{passWord},
+-- 			#{employeeType},
+-- 			#{homeAddress},
+-- 			#{phoneNo},
+-- 			#{emailAddress},
+-- 			#{userId},
+-- 			#{successYN, mode=OUT, jdbcType=CHAR, javaType=String},
+-- 			#{errorMessage, mode=OUT, jdbcType=NVARCHAR, javaType=String}
+-- 		) }
+  	</update>
+</mapper>
